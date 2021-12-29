@@ -1,65 +1,197 @@
 <template>
-  <div class="header">
+  <header class="header container--largo">
     <div class="header__logo">
-      <a class="header__logo__title" href="#"> daviiduhh </a>
+      <router-link class="header__logo__title" to="/"> daviiduhh </router-link>
     </div>
-    <div class="header__social">
-      <a class="header__social__link" href="">
-        <fa class="header__social__link__icon" :icon="['fab', 'github']" />
-      </a>
-      <a class="header__social__link" href="">
-        <fa class="header__social__link__icon" :icon="['fab', 'gitlab']" />
-      </a>
-      <a class="header__social__link" href="">
-        <fa class="header__social__link__icon" :icon="['fab', 'linkedin']" />
-      </a>
-      <a class="header__social__link" href="">
-        <fa class="header__social__link__icon" :icon="['fab', 'twitter']" />
-      </a>
+    <div class="header__nav">
+      <button class="header__nav__btn" @click="showMenu">
+        <fa class="header__nav__btn__icon" icon="bars" v-show="!menu" />
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" v-show="menu">
+    <header class="menu__header container--largo">
+      <button class="menu__header__x" @click="showMenu">
+        <fa class="menu__header__x__icon" icon="x" />
+      </button>
+    </header>
+    <div class="menu__nav container--largo">
+      <router-link to="/" class="menu__nav__link" @click="showMenu">
+        Home
+      </router-link>
+      <router-link to="/portfolio" class="menu__nav__link" @click="showMenu">
+        Portfolio
+      </router-link>
+      <router-link to="/contact" class="menu__nav__link" @click="showMenu">
+        Contact
+      </router-link>
+      <a
+        href=""
+        class="menu__nav__social"
+        target="_blank"
+        rel="noopener noreferrer"
+        >LinkedIn</a
+      >
+      <a
+        href=""
+        class="menu__nav__social"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Github</a
+      >
+      <a
+        href=""
+        class="menu__nav__social"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Gitlab</a
+      >
+      <a
+        href=""
+        class="menu__nav__social"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Twitter</a
+      >
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      menu: false,
+    };
+  },
+  methods: {
+    showMenu: function () {
+      if (this.menu === true) {
+        this.menu = false;
+      } else if (this.menu === false) {
+        this.menu = true;
+      }
+    },
+  },
+};
+</script>
+
 <style lang="scss">
 .header {
-  width: 100%;
+  width: 100% -20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
+  padding: 10px;
+
+  background-color: #211D1C;
 
   &__logo {
     &__title {
-      color: #2c3e50;
+      color: #ffffff;
       font-weight: bold;
       font-size: 20px;
       text-decoration: none;
       cursor: pointer;
+      transition: color 0.5s;
 
       &:hover {
-        color: #3C6E71;
+        color: #04aa6d;
       }
 
       &::before {
-        content: "<";
+        content: "</";
+        color: #04aa6d;
       }
       &::after {
-        content: "/>";
+        content: ">";
+        color: #04aa6d;
       }
     }
   }
 
-  &__social {
+  &__nav {
+    &__btn {
+      background-color: transparent;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      &__icon {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  &__header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
+    margin-bottom: 30px;
+    padding: 10px;
+    z-index: 100;
 
-    &__link {
-        color: #353535;
+    &__x {
+      background-color: transparent;
+      color: #211D1C;
+      border: none;
+      cursor: pointer;
 
-        &__icon {
-            font-size: 2rem;
-        }
+      &:active {
+        transform: scale(0.9);
+      }
+
+      &__icon {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 0 auto;
+    height: 60vh;
+
+    &__link,
+    &__social {
+      color: #211D1C;
+      font-weight: 600;
+      font-size: 20px;
+      text-decoration: none;
+      text-align: right;
+      transition: color 0.5s;
+
+      &:hover {
+        color: #04aa6d;
+      }
+    }
+
+    &__social {
+      font-weight: 300;
+      font-size: 16px;
+      color: #211D1C;
     }
   }
 }

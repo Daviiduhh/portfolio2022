@@ -7,15 +7,15 @@ import 'element-plus/dist/index.css'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-//import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faGitlab, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEye, faBars, faX, faEnvelope, faTerminal } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faGitlab, faLinkedin, faTwitter, faHtml5, faCss3, faJs, faGitAlt, faSass, faGulp, faNpm, faVuejs, faBootstrap } from '@fortawesome/free-brands-svg-icons'
 
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 
 import App from './App.vue'
 
-library.add(faGithub, faGitlab, faLinkedin, faTwitter)
+library.add(faGithub, faGitlab, faLinkedin, faTwitter, faEye, faBars, faX, faEnvelope, faHtml5, faCss3, faJs, faGitAlt, faSass, faGulp, faNpm, faVuejs, faTerminal, faBootstrap)
 
 // const firebaseConfig = {
 //     apiKey: "AIzaSyC3WDcoxeLByyV5QFAFeDXLn0FEZtz_fYc",

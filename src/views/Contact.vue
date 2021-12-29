@@ -1,0 +1,55 @@
+<template>
+  <h1>Contact</h1>
+  <div class="contact container">
+    <a class="contact__link" href="">
+      <fa class="contact__link__icon" :icon="['fab', 'linkedin']" />
+      <h4 class="contact__link__name">LinkedIn</h4>
+    </a>
+    <a class="contact__link" href="">
+      <fa class="contact__link__icon" icon="envelope" />
+      <h4 class="contact__link__name">Email</h4>
+    </a>
+    <a class="contact__link" href="">
+      <fa class="contact__link__icon" :icon="['fab', 'github']" />
+      <h4 class="contact__link__name">Github</h4>
+    </a>
+    <a class="contact__link" href="">
+      <fa class="contact__link__icon" :icon="['fab', 'gitlab']" />
+      <h4 class="contact__link__name">Gitlab</h4>
+    </a>
+    <a class="contact__link" href="">
+      <fa class="contact__link__icon" :icon="['fab', 'twitter']" />
+      <h4 class="contact__link__name">Twitter</h4>
+    </a>
+  </div>
+</template>
+
+<style lang="scss">
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+
+  &__link {
+    color: #211D1C;
+    text-decoration: none;
+    transition: color .5s;
+
+    &:hover {
+        color: #04aa6d;
+    }
+
+    &__icon {
+      font-size: 2rem;
+    }
+
+    &__name {
+        display: inline-block;
+        margin: 0;
+        margin-left: 20px;
+    }
+  }
+}
+</style>
