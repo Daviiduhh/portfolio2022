@@ -128,6 +128,11 @@ export default {
       color: #ffffff;
       border: none;
       cursor: pointer;
+      transition: color 0.5s;
+
+      &:hover {
+        color: #04aa6d;
+      }
 
       &:active {
         transform: scale(0.9);
