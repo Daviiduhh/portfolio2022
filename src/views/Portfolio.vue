@@ -14,8 +14,13 @@
       <router-link class="portfolio__cta__contact btn" to="/contact">
         Contact me
       </router-link>
-      <a class="portfolio__cta__see btn--secondary">
-        <fa class="" :icon="['fab', 'github']" />
+      <a
+        href="https://github.com/Daviiduhh"
+        class="portfolio__cta__see btn--secondary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <fa class="portfolio__cta__see__icon" :icon="['fab', 'github']" />
         See more
       </a>
     </div>
@@ -98,18 +103,19 @@ export default {
 
 @media (min-width: 1024px) {
   .portfolio {
+    padding: 20px 50px;
     &__cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
 
-    &__contact, 
-    &__see {
-      width: 50%;
+      &__contact,
+      &__see {
+        width: 50%;
+      }
     }
-  }
   }
 }
 </style>

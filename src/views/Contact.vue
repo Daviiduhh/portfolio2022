@@ -1,23 +1,48 @@
 <template>
   <h1>Contact</h1>
   <div class="contact container">
-    <a class="contact__link" href="">
+    <a
+      class="contact__link"
+      href="https://www.linkedin.com/in/daviiduhh/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <fa class="contact__link__icon" :icon="['fab', 'linkedin']" />
       <h4 class="contact__link__name">LinkedIn</h4>
     </a>
-    <a class="contact__link" href="">
+    <a
+      class="contact__link"
+      href="mailto: daviiduhhs@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <fa class="contact__link__icon" icon="envelope" />
       <h4 class="contact__link__name">Email</h4>
     </a>
-    <a class="contact__link" href="">
+    <a
+      class="contact__link"
+      href="https://github.com/Daviiduhh"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <fa class="contact__link__icon" :icon="['fab', 'github']" />
       <h4 class="contact__link__name">Github</h4>
     </a>
-    <a class="contact__link" href="">
+    <a
+      class="contact__link"
+      href="https://gitlab.com/Daviiduhh"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <fa class="contact__link__icon" :icon="['fab', 'gitlab']" />
       <h4 class="contact__link__name">Gitlab</h4>
     </a>
-    <a class="contact__link" href="">
+    <a
+      class="contact__link"
+      href="https://twitter.com/Daviiduhh"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <fa class="contact__link__icon" :icon="['fab', 'twitter']" />
       <h4 class="contact__link__name">Twitter</h4>
     </a>
@@ -31,14 +56,15 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
+  padding: 20px 0;
 
   &__link {
-    color: #211D1C;
+    color: #211d1c;
     text-decoration: none;
-    transition: color .5s;
+    transition: color 0.5s;
 
     &:hover {
-        color: #04aa6d;
+      color: #04aa6d;
     }
 
     &__icon {
@@ -46,9 +72,9 @@
     }
 
     &__name {
-        display: inline-block;
-        margin: 0;
-        margin-left: 20px;
+      display: inline-block;
+      margin: 0;
+      margin-left: 20px;
     }
   }
 }

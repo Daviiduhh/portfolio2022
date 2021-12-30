@@ -23,32 +23,42 @@
       <router-link to="/portfolio" class="menu__nav__link" @click="showMenu">
         Portfolio
       </router-link>
+      <router-link to="/about" class="menu__nav__link" @click="showMenu">
+        About
+      </router-link>
       <router-link to="/contact" class="menu__nav__link" @click="showMenu">
         Contact
       </router-link>
       <a
-        href=""
+        href="https://www.linkedin.com/in/daviiduhh/"
         class="menu__nav__social"
         target="_blank"
         rel="noopener noreferrer"
         >LinkedIn</a
       >
       <a
-        href=""
+        href="mailto: daviiduhhs@gmail.com"
+        class="menu__nav__social"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Email</a
+      >
+      <a
+        href="https://github.com/Daviiduhh"
         class="menu__nav__social"
         target="_blank"
         rel="noopener noreferrer"
         >Github</a
       >
       <a
-        href=""
+        href="https://gitlab.com/Daviiduhh"
         class="menu__nav__social"
         target="_blank"
         rel="noopener noreferrer"
         >Gitlab</a
       >
       <a
-        href=""
+        href="https://twitter.com/Daviiduhh"
         class="menu__nav__social"
         target="_blank"
         rel="noopener noreferrer"
@@ -86,7 +96,7 @@ export default {
   margin-bottom: 30px;
   padding: 10px;
 
-  background-color: #211D1C;
+  background-color: #211d1c;
 
   &__logo {
     &__title {
@@ -102,11 +112,11 @@ export default {
       }
 
       &::before {
-        content: "</";
+        content: "<";
         color: #04aa6d;
       }
       &::after {
-        content: ">";
+        content: "/>";
         color: #04aa6d;
       }
     }
@@ -151,7 +161,7 @@ export default {
 
     &__x {
       background-color: transparent;
-      color: #211D1C;
+      color: #211d1c;
       border: none;
       cursor: pointer;
 
@@ -176,7 +186,7 @@ export default {
 
     &__link,
     &__social {
-      color: #211D1C;
+      color: #211d1c;
       font-weight: 600;
       font-size: 20px;
       text-decoration: none;
@@ -191,7 +201,7 @@ export default {
     &__social {
       font-weight: 300;
       font-size: 16px;
-      color: #211D1C;
+      color: #211d1c;
     }
   }
 }

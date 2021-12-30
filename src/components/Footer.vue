@@ -12,24 +12,27 @@
       <router-link to="/portfolio" class="footer__nav__link">
         Portfolio
       </router-link>
+      <router-link to="/about" class="footer__nav__link">
+        About
+      </router-link>
       <router-link to="/contact" class="footer__nav__link">
         Contact
       </router-link>
     </div>
     <div class="footer__social">
-      <a class="footer__social__link" href="">
+      <a class="footer__social__link" href="https://www.linkedin.com/in/daviiduhh/"  target="_blank" rel="noopener noreferrer">
         <fa class="footer__social__link__icon" :icon="['fab', 'linkedin']" />
       </a>
-      <a class="footer__social__link" href="">
+      <a class="footer__social__link" href="mailto: daviiduhhs@gmail.com" target="_blank" rel="noopener noreferrer">
         <fa class="footer__social__link__icon" icon="envelope" />
       </a>
-      <a class="footer__social__link" href="">
+      <a class="footer__social__link" href="https://github.com/Daviiduhh" target="_blank" rel="noopener noreferrer">
         <fa class="footer__social__link__icon" :icon="['fab', 'github']" />
       </a>
-      <a class="footer__social__link" href="">
+      <a class="footer__social__link" href="https://gitlab.com/Daviiduhh" target="_blank" rel="noopener noreferrer">
         <fa class="footer__social__link__icon" :icon="['fab', 'gitlab']" />
       </a>
-      <a class="footer__social__link" href="">
+      <a class="footer__social__link" href="https://twitter.com/Daviiduhh" target="_blank" rel="noopener noreferrer">
         <fa class="footer__social__link__icon" :icon="['fab', 'twitter']" />
       </a>
     </div>
@@ -71,11 +74,11 @@
       }
 
       &::before {
-        content: "</";
+        content: "<";
         color: #04aa6d;
       }
       &::after {
-        content: ">";
+        content: "/>";
         color: #04aa6d;
       }
     }
