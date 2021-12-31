@@ -34,39 +34,33 @@ body {
 .container {
   margin: 0 10px;
 }
-@media (min-width: 768px) {
-  .container {
-    margin: 0 60px;
-  }
-}
-@media (min-width: 1024px) {
-  .container {
-    margin: 0 150px;
-  }
-}
-@media (min-width: 1365px) {
-  .container {
-    margin: 0 200px;
-  }
-}
-
 .container--largo {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 @media (min-width: 768px) {
+  .container {
+    margin: 0 60px;
+  }
   .container--largo {
     padding-left: 40px;
     padding-right: 40px;
   }
 }
 @media (min-width: 1024px) {
+  .container {
+    margin: 0 150px;
+  }
   .container--largo {
     padding-left: 80px;
     padding-right: 80px;
   }
 }
 @media (min-width: 1365px) {
+  .container {
+    margin: 0 200px;
+  }
   .container--largo {
     padding-left: 100px;
     padding-right: 100px;
@@ -79,8 +73,8 @@ body {
   font-weight: 600;
   font-size: 18px;
   text-align: center;
-  border-radius: 15px;
-  padding: 10px 0;
+  border-radius: 5px;
+  padding: 8px 0;
   margin: 0;
   cursor: pointer;
   text-decoration: none;

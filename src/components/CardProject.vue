@@ -2,7 +2,7 @@
   <div class="card-project">
     <div class="card-project__header">
       <div class="card-project__header__info">
-        <h3 class="card-project__header__info__title" v-text="title"></h3>
+        <h2 class="card-project__header__info__title" v-text="title"></h2>
         <p
           class="card-project__header__info__technologies"
           v-text="technologies"
@@ -28,14 +28,7 @@
     >
     </a>
     <div class="card-project__details">
-      <p class="card-project__details__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde qui,
-        veniam soluta dignissimos voluptates nam iste, dolores libero porro
-        sequi cum perferendis blanditiis nostrum ipsa eos nemo veritatis tempore
-        magnam dolor perspiciatis esse totam. Atque possimus officia, porro
-        voluptate repellat iusto at autem aperiam magnam cum eligendi quia et
-        blanditiis?
-      </p>
+      <p class="card-project__details__text" v-text="description"></p>
     </div>
   </div>
 </template>
@@ -48,6 +41,7 @@ export default {
     technologies: String,
     repository: String,
     web: String,
+    description: String
   },
   data() {
     return {};
@@ -69,6 +63,7 @@ export default {
   justify-content: space-between;
   background-color: #ffffff;
   border-radius: 10px;
+  padding: 20px 0;
 
   box-shadow: 1px 2px 16px 1px rgba(#211D1C, 0.54);
   -webkit-box-shadow: 1px 2px 16px 1px rgba(#211D1C, 0.54);
@@ -76,7 +71,7 @@ export default {
 
   &__header {
     width: 90%;
-    margin: 10px auto;
+    margin: 5px auto 15px auto;
     display: flex;
     justify-content: space-between;
 
@@ -89,8 +84,8 @@ export default {
 
       &__technologies {
         margin: 0;
-
-        font-size: 12px;
+        margin-top: 1px;
+        font-size: 14px;
         font-weight: 300;
       }
     }
@@ -99,7 +94,7 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
 
       &__link {
         color: #211D1C;
@@ -123,8 +118,8 @@ export default {
   &__img {
     width: 90%;
     aspect-ratio: 16 / 9;
-    border-radius: 10px;
-    margin: 10px auto;
+    border-radius: 5px;
+    margin: 10px auto 15px auto;
 
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -133,7 +128,7 @@ export default {
 
   &__details {
     width: 90%;
-    margin: 10px auto;
+    margin: 10px auto 15px auto;
 
     &__text {
       font-weight: 300;

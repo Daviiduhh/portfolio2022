@@ -1,5 +1,7 @@
 <template>
-  <h1>Contact</h1>
+  <div class="container">
+    <Title title="Contact" subtitle="I'd love to work with you" />
+  </div>
   <div class="contact container">
     <a
       class="contact__link"
@@ -49,6 +51,16 @@
   </div>
 </template>
 
+<script>
+import Title from "../components/Title.vue";
+
+export default {
+  components: {
+    Title,
+  },
+};
+</script>
+
 <style lang="scss">
 .contact {
   display: flex;
@@ -62,6 +74,7 @@
     color: #211d1c;
     text-decoration: none;
     transition: color 0.5s;
+    margin-left: 20px;
 
     &:hover {
       color: #04aa6d;
@@ -75,6 +88,24 @@
       display: inline-block;
       margin: 0;
       margin-left: 20px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    padding: 150px;
+    flex-direction: row;
+
+    &__link {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-left: 0;
+
+      &__name {
+        margin: 0;
+      }
     }
   }
 }

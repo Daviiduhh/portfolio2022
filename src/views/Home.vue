@@ -42,7 +42,7 @@ export default {
     &__title {
       margin: 0;
       color: #211d1c;
-      font-size: 35px;
+      font-size: 30px;
       font-weight: 900;
 
       width: 17ch;
@@ -86,6 +86,17 @@ export default {
 @keyframes blink {
   50% {
     border-color: transparent
+  }
+}
+
+@media (min-width: 450px) {
+  .home__about__title {
+    font-size: 35px;
+  }
+}
+@media (min-width: 768px) {
+  .home__about__title {
+    font-size: 40px;
   }
 }
 </style>

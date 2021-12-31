@@ -1,6 +1,9 @@
 <template>
   <div class="about container">
-    <h1>About</h1>
+    <Title
+      title="About"
+      subtitle="A little about me"
+    />
     <div class="about__skills">
       <h2 class="about__skills__title">Technologies I use to work</h2>
       <div class="about__skills__skill vue">
@@ -46,6 +49,16 @@
     </div>
   </div>
 </template>
+
+<script>
+import Title from "../components/Title.vue";
+
+export default {
+  components: {
+    Title
+  }
+}
+</script>
 
 <style lang="scss">
 .about {

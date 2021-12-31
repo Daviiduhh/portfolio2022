@@ -1,6 +1,9 @@
 <template>
-  <h1 class="portfolio__title">Portfolio</h1>
   <div class="portfolio container">
+    <Title
+      title="Portfolio"
+      subtitle="Here you can see my projects"
+    />
     <CardProject
       v-for="(p, index) in projects"
       :key="index"
@@ -9,11 +12,9 @@
       :web="p.web"
       :repository="p.repository"
       :img="p.img"
+      :description="p.description"
     />
     <div class="portfolio__cta">
-      <router-link class="portfolio__cta__contact btn" to="/contact">
-        Contact me
-      </router-link>
       <a
         href="https://github.com/Daviiduhh"
         class="portfolio__cta__see btn--secondary"
@@ -23,17 +24,22 @@
         <fa class="portfolio__cta__see__icon" :icon="['fab', 'github']" />
         See more
       </a>
+      <router-link class="portfolio__cta__contact btn" to="/contact">
+        Contact me
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 import CardProject from "../components/CardProject.vue";
+import Title from "../components/Title.vue";
 
 export default {
   name: "Home",
   components: {
     CardProject,
+    Title,
   },
   data() {
     return {
@@ -42,7 +48,8 @@ export default {
           title: "Coin Market",
           img: "project0.png",
           technologies: "Vue, Bootstrap, CSS",
-          description: "Coin Market list the criptocurrency market cap, it shows 20 cryptos with the logo, name, short-name, value and value change. The data es from the GekoCoin API",
+          description:
+            "Coin Market list the criptocurrency market cap, it shows 20 cryptos with the logo, name, short-name, value and value change. The data is obtained from the GekoCoin API. The styles are made with bootstrap and CSS.",
           repository: "https://github.com/Daviiduhh/mercado-de-monedas",
           web: "https://mercadodemonedas.netlify.app/",
         },
@@ -100,10 +107,17 @@ export default {
   gap: 20px;
 
   &__cta {
+    margin-top: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+
+    &__contact,
+    &__see {
+      width: 100%;
+    }
   }
 }
 
@@ -112,7 +126,7 @@ export default {
     padding: 20px 50px;
     &__cta {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
