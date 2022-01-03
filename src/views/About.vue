@@ -102,7 +102,7 @@ export default {
 }
 .git {
   &:hover {
-    color: #f64d27;
+    color: #f1481c;
   }
 }
 .html {

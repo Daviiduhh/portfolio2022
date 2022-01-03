@@ -35,7 +35,7 @@ export default {
 
         &__h4 {
             font-weight: 300;
-            color: #797776;
+            color: #646464;
         }
     }
 </style>

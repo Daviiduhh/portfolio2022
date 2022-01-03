@@ -85,7 +85,7 @@ export default {
       &__technologies {
         margin: 0;
         margin-top: 1px;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 300;
       }
     }
@@ -132,7 +132,7 @@ export default {
 
     &__text {
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       text-align: left;
       margin: 0;
     }
