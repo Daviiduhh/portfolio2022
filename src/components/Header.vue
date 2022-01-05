@@ -197,9 +197,16 @@ export default {
       text-decoration: none;
       text-align: right;
       transition: color 0.5s;
+      margin-right: 15px;
 
       &:hover {
         color: #04aa6d;
+        //Animation
+        // transform: translate(-15px);
+        // -webkit-transition: 0.5s ease-in-out;
+        // -moz-transition: 0.5s ease-in-out;
+        // -o-transition: 0.5s ease-in-out;
+        // transition: 0.5s ease-in-out;
       }
     }
 

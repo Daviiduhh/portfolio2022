@@ -90,6 +90,7 @@ export default {
 
     &__text {
       text-align: left;
+      font-size: 16px;
     }
   }
 
