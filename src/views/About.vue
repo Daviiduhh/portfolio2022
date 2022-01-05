@@ -1,9 +1,26 @@
 <template>
   <div class="about container">
-    <Title
-      title="About"
-      subtitle="A little about me"
-    />
+    <Title title="About" subtitle="A little about me" />
+    <div class="about__me">
+      <p class="about__me__text">
+        Hi, I'm David Madrid Nápoles, front end web developer, with experience
+        developing front end solutions like SPA and PWA, with technologies like
+        VueJs, JavaScript, CSS, SASS, and HTML. I have learned to do this on my
+        own, with courses, references, guides and documentation. The university
+        helped me a little bit with oop.
+      </p>
+      <p class="about__me__text">
+        I decided to study web development because is the easiest way to reach
+        the people, you just need a web browser to explore the entire web. The
+        web industry is growing so fast, and with the arrived of the PWA, web
+        3.0 and the most powerful JavaScript frameworks the possibilities are
+        going to be bigger and bigger .
+      </p>
+      <p class="about__me__text">
+        I spend my free time taking pictures, reading, playing the drums and
+        developing new things to explore technologies I'm interested in.
+      </p>
+    </div>
     <div class="about__skills">
       <h2 class="about__skills__title">Technologies I use to work</h2>
       <div class="about__skills__skill vue">
@@ -55,13 +72,27 @@ import Title from "../components/Title.vue";
 
 export default {
   components: {
-    Title
-  }
-}
+    Title,
+  },
+};
 </script>
 
 <style lang="scss">
 .about {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  &__me {
+    width: 80%;
+
+    &__text {
+      text-align: left;
+    }
+  }
+
   &__skills {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -71,6 +102,7 @@ export default {
       grid-column: 1 / 5;
       text-align: center;
       margin: 0;
+      margin-bottom: 40px;
     }
 
     &__skill {

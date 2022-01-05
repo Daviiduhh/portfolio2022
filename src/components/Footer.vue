@@ -4,7 +4,7 @@
       <router-link class="footer__daviiduhh__title" to="/">
         daviiduhh
       </router-link>
-      <h4 class="footer__daviiduhh__subtitle">Frontend web developer</h4>
+      <h4 class="footer__daviiduhh__subtitle">Front end web developer</h4>
       <p class="footer__daviiduhh__made">Made with <strong>VueJs</strong></p>
     </div>
     <div class="footer__nav">

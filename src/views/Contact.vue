@@ -106,6 +106,10 @@ export default {
       &__name {
         margin: 0;
       }
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
   }
 }

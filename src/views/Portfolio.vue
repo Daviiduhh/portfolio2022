@@ -46,7 +46,7 @@ export default {
           img: "project0.png",
           technologies: "Vue, Bootstrap, CSS",
           description:
-            "Coin Market list the criptocurrency market cap, it shows 20 cryptos with the logo, name, short-name, value and value change. The data is obtained from the GekoCoin API. The styles are made with bootstrap and CSS.",
+            "Coin Market lists the cryptocurrency market cap, it shows 20 cryptos with the logo, name, short-name, value and value change. The data are obtained from the GekoCoin API. The styles are made with bootstrap and CSS.",
           repository: "https://github.com/Daviiduhh/mercado-de-monedas",
           web: "https://mercadodemonedas.netlify.app/",
         },
@@ -62,7 +62,7 @@ export default {
           title: "APOTD",
           img: "project2.png",
           technologies: "Vue, Bootstrap, CSS",
-          description: "This page use a NASA API that shows an astronomical image everyday, the image comes with a description and the date.",
+          description: "This page uses a NASA API that shows an astronomical image every day, the image comes with a description and the date.",
           repository:
             "https://github.com/Daviiduhh/astronomy-img-of-the-day.git",
           web: "https://astronomyimgoftheday.netlify.app/",
@@ -71,7 +71,7 @@ export default {
           title: "Hair Salon",
           img: "project3.png",
           technologies: "SASS, JavaScript, HTML",
-          description: "Frontend page to book a session on a hair salon. You can choose different services, a date and an hour. Then the page will show you a resume of your order",
+          description: "Front end page to book a session on a hair salon. You can choose different services, a date and an hour. Then the page will show you a resume of your order",
           repository: "https://github.com/Daviiduhh/appBarberia",
           web: "https://appbarberiadaviiduhh.netlify.app/",
         },

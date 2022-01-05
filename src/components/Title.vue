@@ -22,7 +22,7 @@ export default {
 <style lang="scss">
     .title {
         text-align: left;
-        margin: 20px;
+        margin: 20px 0;
         
         &__h1,
         &__h4 {

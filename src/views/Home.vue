@@ -2,9 +2,9 @@
   <div class="home container">
     <div class="home__about">
       <h1 class="home__about__title">Hi, I'm David Madrid</h1>
-      <h2 class="home__about__subtitle">Frontend web developer</h2>
+      <h2 class="home__about__subtitle">Front end web developer</h2>
       <h4 class="home__about__desc">
-        I have experience crafting solid and scalable frontend products with
+        I have experience crafting solid and scalable front end products with
         great user experience.
       </h4>
       <div class="home__about__btns">
