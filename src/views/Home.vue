@@ -8,13 +8,14 @@
         great user experience.
       </h4>
       <div class="home__about__btns">
-        <router-link class="home__btns__btn btn" to="/portfolio">
+        <router-link class="home__btns__btn btn" to="/portfolio" title="Go to portfolio">
           Portfolio
         </router-link>
         <a
           :href="`${publicPath}DavidMadrid_Frontend_CV.pdf`"
           download="DavidMadrid_Frontend_CV"
           class="home__btns__btn--secondary btn--secondary"
+          title="Download CV"
         >
           Download CV
         </a>

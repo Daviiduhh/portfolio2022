@@ -106,7 +106,7 @@ export default {
 .portfolio {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 20px;
+  gap: 30px;
 
   &__cta {
     margin-top: 10px;
@@ -125,7 +125,7 @@ export default {
 
 @media (min-width: 1024px) {
   .portfolio {
-    padding: 20px 50px;
+    padding: 20px 80px;
     &__cta {
       display: flex;
       flex-direction: row;

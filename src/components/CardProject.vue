@@ -9,10 +9,25 @@
         ></p>
       </div>
       <div class="card-project__header__links">
-        <a class="card-project__header__links__link" :href="web" target="_blank" rel="noopener noreferrer" title="View website">
-          <fa class="card-project__header__links__link__icon" icon="globe-americas" />
+        <a
+          class="card-project__header__links__link"
+          :href="web"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View website"
+        >
+          <fa
+            class="card-project__header__links__link__icon"
+            icon="globe-americas"
+          />
         </a>
-        <a class="card-project__header__links__link" :href="repository" target="_blank" rel="noopener noreferrer">
+        <a
+          class="card-project__header__links__link"
+          :href="repository"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View repository"
+        >
           <fa
             class="card-project__header__links__link__icon"
             :icon="['fab', 'github']"
@@ -23,8 +38,10 @@
     <a
       class="card-project__img"
       :href="web"
-      target="_blank" rel="noopener noreferrer"
+      target="_blank"
+      rel="noopener noreferrer"
       :style="'background: url(' + getImgUrl(img) + ');'"
+      title="View website"
     >
     </a>
     <div class="card-project__details">
@@ -41,7 +58,7 @@ export default {
     technologies: String,
     repository: String,
     web: String,
-    description: String
+    description: String,
   },
   data() {
     return {};
@@ -65,9 +82,10 @@ export default {
   border-radius: 10px;
   padding: 20px 0;
 
-  box-shadow: 1px 2px 16px 1px rgba(#211D1C, 0.54);
-  -webkit-box-shadow: 1px 2px 16px 1px rgba(#211D1C, 0.54);
-  -moz-box-shadow: 1px 2px 16px 1px rgba(#211D1C, 0.54);
+  //Shadow
+  box-shadow: 1px 2px 16px 1px rgba(#211d1c, 0.54);
+  -webkit-box-shadow: 1px 2px 16px 1px rgba(#211d1c, 0.54);
+  -moz-box-shadow: 1px 2px 16px 1px rgba(#211d1c, 0.54);
 
   &__header {
     width: 90%;
@@ -97,7 +115,7 @@ export default {
       gap: 15px;
 
       &__link {
-        color: #211D1C;
+        color: #211d1c;
         transition: color 0.5s;
 
         &:hover {
@@ -148,7 +166,7 @@ export default {
       padding: 10px 0;
       border-radius: 10px;
       border: none;
-      background-color: #211D1C;
+      background-color: #211d1c;
       color: #ffffff;
 
       font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -156,6 +174,35 @@ export default {
       -moz-osx-font-smoothing: grayscale;
       font-weight: 600;
       text-align: center;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-project {
+    &__header {
+      &__info {
+        &__title {
+          font-size: 26px;
+        }
+        &__technologies {
+          font-size: 20px;
+        }
+      }
+
+      &__links {
+        &__link {
+          &__icon {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+    &__details {
+      &__text {
+        font-size: 18px;
+      }
     }
   }
 }

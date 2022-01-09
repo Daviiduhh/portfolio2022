@@ -41,13 +41,13 @@
 
 <style lang="scss">
 .footer {
+  margin-top: auto;
   padding: 40px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin: 30px auto 0 auto;
   background-color: #211d1c;
   color: #ffffff;
   text-align: left;

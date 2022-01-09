@@ -31,8 +31,14 @@ body {
   margin: 0;
 }
 
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
-  margin: 0 10px;
+  margin: 0 10px 30px 10px;
 }
 .container--largo {
   padding-left: 10px;
@@ -41,7 +47,7 @@ body {
 
 @media (min-width: 768px) {
   .container {
-    margin: 0 60px;
+    margin: 0 60px 30px 60px;
   }
   .container--largo {
     padding-left: 40px;
@@ -50,7 +56,7 @@ body {
 }
 @media (min-width: 1024px) {
   .container {
-    margin: 0 150px;
+    margin: 0 150px 30px 150px;
   }
   .container--largo {
     padding-left: 80px;
@@ -59,7 +65,7 @@ body {
 }
 @media (min-width: 1365px) {
   .container {
-    margin: 0 200px;
+    margin: 0 200px 30px 200px;
   }
   .container--largo {
     padding-left: 100px;
