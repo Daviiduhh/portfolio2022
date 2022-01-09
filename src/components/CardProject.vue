@@ -9,8 +9,8 @@
         ></p>
       </div>
       <div class="card-project__header__links">
-        <a class="card-project__header__links__link" :href="web" target="_blank" rel="noopener noreferrer">
-          <fa class="card-project__header__links__link__icon" icon="eye" />
+        <a class="card-project__header__links__link" :href="web" target="_blank" rel="noopener noreferrer" title="View website">
+          <fa class="card-project__header__links__link__icon" icon="globe-americas" />
         </a>
         <a class="card-project__header__links__link" :href="repository" target="_blank" rel="noopener noreferrer">
           <fa
