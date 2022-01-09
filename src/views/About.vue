@@ -12,9 +12,9 @@
       <p class="about__me__text">
         I decided to study web development because is the easiest way to reach
         the people, you just need a web browser to explore the entire web. The
-        web industry is growing so fast, and with the arrived of the PWA, web
-        3.0 and the most powerful JavaScript frameworks the possibilities are
-        going to be bigger and bigger .
+        web industry is growing so fast, and with the arrived of the PWA, web3
+        and the most powerful JavaScript frameworks the possibilities are going
+        to be bigger and bigger .
       </p>
       <p class="about__me__text">
         I spend my free time taking pictures, reading, playing the drums and
@@ -86,9 +86,11 @@ export default {
   gap: 40px;
 
   &__me {
-    width: 80%;
+    width: 90%;
 
     &__text {
+      margin-top: 0;
+      margin-bottom: 20px;
       text-align: left;
       font-size: 16px;
     }
