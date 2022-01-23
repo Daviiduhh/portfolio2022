@@ -81,7 +81,7 @@ export default {
     }
 
     &__icon {
-      font-size: 2rem;
+      font-size: 4rem;
     }
 
     &__name {

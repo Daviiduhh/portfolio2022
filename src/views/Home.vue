@@ -8,7 +8,11 @@
         great user experience.
       </h4>
       <div class="home__about__btns">
-        <router-link class="home__btns__btn btn" to="/portfolio" title="Go to portfolio">
+        <router-link
+          class="home__btns__btn btn"
+          to="/portfolio"
+          title="Go to portfolio"
+        >
           Portfolio
         </router-link>
         <a
@@ -70,23 +74,23 @@ export default {
 
     &__btns {
       display: flex;
+      flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       gap: 15px;
-      margin-bottom: 50px;
     }
   }
 }
 
 @keyframes typing {
   from {
-    width: 0
+    width: 0;
   }
 }
-    
+
 @keyframes blink {
   50% {
-    border-color: transparent
+    border-color: transparent;
   }
 }
 
@@ -96,8 +100,27 @@ export default {
   }
 }
 @media (min-width: 768px) {
-  .home__about__title {
-    font-size: 40px;
+  .home__about {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__btns {
+      width: 60%;
+      flex-direction: row;
+    }
+  }
+}
+@media (min-width: 900px) {
+  .home__about__btns {
+    width: 50%;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1200px) {
+  .home__about__btns {
+    width: 40%;
+    flex-direction: row;
   }
 }
 </style>

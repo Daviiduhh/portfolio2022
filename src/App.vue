@@ -20,7 +20,13 @@ export default {
 </script>
 
 <style lang="scss">
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
 body {
+  font-size: 1.6rem;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -77,7 +83,7 @@ body {
 .btn--secondary {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.5em;
   text-align: center;
   border-radius: 5px;
   padding: 8px 0;
@@ -85,7 +91,7 @@ body {
   cursor: pointer;
   text-decoration: none;
   display: block;
-  width: 150px;
+  width: 100%;
 
   &:active {
     transform: scale(0.9);

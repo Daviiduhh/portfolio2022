@@ -92,7 +92,7 @@ export default {
       margin-top: 0;
       margin-bottom: 20px;
       text-align: left;
-      font-size: 16px;
+      font-size: 1.3em;
     }
   }
 
@@ -119,7 +119,7 @@ export default {
       }
 
       &__icon {
-        font-size: 3rem;
+        font-size: 5rem;
       }
     }
   }

@@ -1,6 +1,8 @@
 <template>
-  <div class="portfolio container">
+  <div class="container">
     <Title title="Portfolio" subtitle="Here you can see my projects" />
+  </div>
+  <div class="portfolio container">
     <CardProject
       v-for="(p, index) in projects"
       :key="index"
@@ -125,13 +127,14 @@ export default {
 
 @media (min-width: 1024px) {
   .portfolio {
-    padding: 20px 80px;
+    grid-template-columns: repeat(2, 1fr);
     &__cta {
+      grid-column: 1 / 3;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 30px;
 
       &__contact,
       &__see {

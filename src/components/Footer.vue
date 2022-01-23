@@ -125,7 +125,7 @@
       }
 
       &__icon {
-        font-size: 2rem;
+        font-size: 3rem;
       }
     }
   }
