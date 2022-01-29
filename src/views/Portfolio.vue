@@ -12,6 +12,8 @@
       :repository="p.repository"
       :img="p.img"
       :description="p.description"
+      :type="p.type"
+      :category="p.category"
     />
     <div class="portfolio__cta">
       <a
@@ -51,6 +53,8 @@ export default {
             "Coin Market lists the cryptocurrency market cap, it shows 20 cryptos with the logo, name, short-name, value and value change. The data are obtained from the GekoCoin API. The styles are made with bootstrap and CSS.",
           repository: "https://github.com/Daviiduhh/mercado-de-monedas",
           web: "https://mercadodemonedas.netlify.app/",
+          type: "Web app",
+          category: "Monitor"
         },
         p1: {
           title: "dogAPI",
@@ -60,6 +64,8 @@ export default {
             "This page shows you the most pretty dogs images served from the internet's biggest collection of open source dog pictures: dogAPI. The page also shows you how many dogs you have seen.",
           repository: "https://github.com/Daviiduhh/dogapi-vue",
           web: "https://perritos-vue.netlify.app/",
+          type: "Web app",
+          category: "Entertaiment"
         },
         p2: {
           title: "APOTD",
@@ -70,6 +76,8 @@ export default {
           repository:
             "https://github.com/Daviiduhh/astronomy-img-of-the-day.git",
           web: "https://astronomyimgoftheday.netlify.app/",
+          type: "Web app",
+          category: "Divulgation"
         },
         p3: {
           title: "Hair Salon",
@@ -79,6 +87,8 @@ export default {
             "Front end page to book a session on a hair salon. You can choose different services, a date and an hour. Then the page will show you a resume of your order.",
           repository: "https://github.com/Daviiduhh/appBarberia",
           web: "https://appbarberiadaviiduhh.netlify.app/",
+          type: "Web app",
+          category: "Productivity"
         },
         p4: {
           title: "Festival",
@@ -88,6 +98,8 @@ export default {
             "This is a page about a Rock & EDM festival! You can see the details of the festival, the line up, a gallery with zoom clicking on the images, and the different tickets.",
           repository: "https://github.com/Daviiduhh/rockEdmFestival",
           web: "https://daviiduhhfestival.netlify.app/",
+          type: "Static",
+          category: "Informative"
         },
         p5: {
           title: "Blog el buen café",
@@ -97,6 +109,8 @@ export default {
             "This page is a blog about coffee, where you can find articles, workshops, recipes and tips to make and enjoy a better coffee.",
           repository: "https://github.com/Daviiduhh/blogElBuenCafe",
           web: "https://blogelbuencafe.netlify.app/",
+          type: "Static",
+          category: "Blog"
         },
       },
     };

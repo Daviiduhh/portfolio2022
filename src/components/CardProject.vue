@@ -44,8 +44,18 @@
       title="View website"
     >
     </a>
+    <div class="card-project__desc">
+      <p class="card-project__desc__text" v-text="description"></p>
+    </div>
     <div class="card-project__details">
-      <p class="card-project__details__text" v-text="description"></p>
+      <div class="card-project__details__group">
+        <h3 class="card-project__details__group__title">Type</h3>
+        <p class="card-project__details__group__text" v-text="type"></p>
+      </div>
+      <div class="card-project__details__group">
+        <h3 class="card-project__details__group__title">Category</h3>
+        <p class="card-project__details__group__text" v-text="category"></p>
+      </div>
     </div>
   </div>
 </template>
@@ -59,6 +69,8 @@ export default {
     repository: String,
     web: String,
     description: String,
+    type: String,
+    category: String
   },
   data() {
     return {};
@@ -81,15 +93,16 @@ export default {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px 0;
+  gap: 25px;
 
   //Shadow
-  box-shadow: 1px 2px 16px 1px rgba(#211d1c, 0.54);
-  -webkit-box-shadow: 1px 2px 16px 1px rgba(#211d1c, 0.54);
-  -moz-box-shadow: 1px 2px 16px 1px rgba(#211d1c, 0.54);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
 
   &__header {
     width: 90%;
-    margin: 5px auto 15px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 
@@ -137,16 +150,16 @@ export default {
     width: 90%;
     aspect-ratio: 16 / 9;
     border-radius: 5px;
-    margin: 10px auto 15px auto;
+    margin: 0 auto;
 
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center center !important;
   }
 
-  &__details {
+  &__desc {
     width: 90%;
-    margin: 10px auto 15px auto;
+    margin: 0 auto;
 
     &__text {
       font-weight: 300;
@@ -156,24 +169,33 @@ export default {
     }
   }
 
-  &__seemore {
+  &__details {
     width: 90%;
-    margin: 10px auto 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    gap: 30px;
 
-    &__button {
-      cursor: pointer;
-      width: 100%;
-      padding: 10px 0;
-      border-radius: 10px;
-      border: none;
-      background-color: #211d1c;
-      color: #ffffff;
+    &__group {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
 
-      font-family: Avenir, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-weight: 600;
-      text-align: center;
+      &__title,
+      &__text {
+        margin: 0;
+      }
+
+      &__title {
+        font-weight: 500;
+      }
+
+      &__text {
+        font-weight: 300;
+      }
     }
   }
 }
@@ -199,7 +221,7 @@ export default {
       }
     }
 
-    &__details {
+    &__desc {
       &__text {
         font-size: 18px;
       }
