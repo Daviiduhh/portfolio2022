@@ -6,16 +6,16 @@
     <div class="header__nav">
       <!-- Nav desktop -->
       <nav class="header__nav__nav">
-        <router-link to="/" class="header__nav__nav__link link" @click="showMenu">
+        <router-link to="/" class="header__nav__nav__link link">
           Home
         </router-link>
-        <router-link to="/portfolio" class="header__nav__nav__link link" @click="showMenu">
+        <router-link to="/portfolio" class="header__nav__nav__link link">
           Portfolio
         </router-link>
-        <router-link to="/about" class="header__nav__nav__link link" @click="showMenu">
+        <router-link to="/about" class="header__nav__nav__link link">
           About
         </router-link>
-        <router-link to="/contact" class="header__nav__nav__link link" @click="showMenu">
+        <router-link to="/contact" class="header__nav__nav__link link">
           Contact
         </router-link>
       </nav>
