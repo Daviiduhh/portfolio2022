@@ -123,4 +123,13 @@ body {
     border: 2px solid #211d1c;
   }
 }
+
+.link {
+  cursor: pointer;
+  transition: border 0.5s, color 0.5s;
+
+  &:hover {
+    color: #04aa6d;
+  }
+}
 </style>
