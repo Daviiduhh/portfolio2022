@@ -183,7 +183,7 @@ export default {
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 30px;
-    padding: 10px;
+    padding: 20px;
     z-index: 100;
 
     &__x {
