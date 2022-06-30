@@ -44,10 +44,22 @@ export default {
   },
   data() {
     return {
-      projects: {
-        p0: {
+      projects: [
+        {
+          title: "Aerolab Challenge",
+          img: "/projects_imgs/project2.png",
+          technologies: "Nuxt, JavaScript, CSS, HTML",
+          description:
+            "The challenge is to build a catalog view for a loyalty program app. Aerolab provide the base UI and API, I can use it as provided or I can make any improvements I deem fit. It’s up to my imagination and my skills to come up with new solutions and/or interactions between the components.",
+          repository:
+            "https://github.com/Daviiduhh/aerolab-challenge",
+          web: "https://aerolab.netlify.app/",
+          type: "Web app",
+          category: "E-commerce"
+        },
+        {
           title: "Coin Market",
-          img: "project0.png",
+          img: "/projects_imgs/project0.png",
           technologies: "Vue, Bootstrap, CSS",
           description:
             "Coin Market lists the cryptocurrency market cap, it shows 20 cryptos with the logo, name, short-name, value and value change. The data are obtained from the GekoCoin API. The styles are made with bootstrap and CSS.",
@@ -56,9 +68,9 @@ export default {
           type: "Web app",
           category: "Monitor"
         },
-        p1: {
+        {
           title: "dogAPI",
-          img: "project1.png",
+          img: "/projects_imgs/project1.png",
           technologies: "Vue, Bootstrap, CSS",
           description:
             "This page shows you the most pretty dogs images served from the internet's biggest collection of open source dog pictures: dogAPI. The page also shows you how many dogs you have seen.",
@@ -67,21 +79,9 @@ export default {
           type: "Web app",
           category: "Entertaiment"
         },
-        p2: {
-          title: "APOTD",
-          img: "project2.png",
-          technologies: "Vue, Bootstrap, CSS",
-          description:
-            "This page uses a NASA API that shows an astronomical image every day, the image comes with a description and the date.",
-          repository:
-            "https://github.com/Daviiduhh/astronomy-img-of-the-day.git",
-          web: "https://astronomyimgoftheday.netlify.app/",
-          type: "Web app",
-          category: "Divulgation"
-        },
-        p3: {
+        {
           title: "Hair Salon",
-          img: "project3.png",
+          img: "/projects_imgs/project3.png",
           technologies: "SASS, JavaScript, HTML",
           description:
             "Front end page to book a session on a hair salon. You can choose different services, a date and an hour. Then the page will show you a resume of your order.",
@@ -90,10 +90,10 @@ export default {
           type: "Web app",
           category: "Productivity"
         },
-        p4: {
+        {
           title: "Festival",
-          img: "project4.png",
-          technologies: "SASS, JavaScript, HTML",
+          img: "/projects_imgs/project4.png",
+          technologies: "JavaScript, SASS, HTML",
           description:
             "This is a page about a Rock & EDM festival! You can see the details of the festival, the line up, a gallery with zoom clicking on the images, and the different tickets.",
           repository: "https://github.com/Daviiduhh/rockEdmFestival",
@@ -101,9 +101,9 @@ export default {
           type: "Static",
           category: "Informative"
         },
-        p5: {
+        {
           title: "Blog el buen café",
-          img: "project5.png",
+          img: "/projects_imgs/project5.png",
           technologies: "CSS, HTML, JavaScript",
           description:
             "This page is a blog about coffee, where you can find articles, workshops, recipes and tips to make and enjoy a better coffee.",
@@ -112,7 +112,7 @@ export default {
           type: "Static",
           category: "Blog"
         },
-      },
+      ],
     };
   },
 };

@@ -16,7 +16,7 @@
           Portfolio
         </router-link>
         <a
-          :href="`${publicPath}DavidMadrid_Frontend_CV.pdf`"
+          href="/DavidMadrid_Frontend_CV.pdf"
           download="DavidMadrid_Frontend_CV"
           class="home__btns__btn--secondary btn--secondary"
           title="Download CV"
@@ -32,7 +32,6 @@
 export default {
   data() {
     return {
-      publicPath: process.env.BASE_URL,
     };
   },
 };

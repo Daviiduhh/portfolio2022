@@ -40,7 +40,7 @@
       :href="web"
       target="_blank"
       rel="noopener noreferrer"
-      :style="'background: url(' + getImgUrl(img) + ');'"
+      :style="'background: url(' + img + ');'"
       title="View website"
     >
     </a>
@@ -76,10 +76,6 @@ export default {
     return {};
   },
   methods: {
-    getImgUrl(image) {
-      var images = require.context("../assets/projects_imgs", false, /\.png$/);
-      return images("./" + image);
-    },
   },
 };
 </script>
