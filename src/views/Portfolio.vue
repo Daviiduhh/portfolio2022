@@ -3,25 +3,12 @@
     <Title title="Portfolio" subtitle="Here you can see my projects" />
   </div>
   <div class="portfolio container">
-    <CardProject
-      v-for="(p, index) in projects"
-      :key="index"
-      :title="p.title"
-      :technologies="p.technologies"
-      :web="p.web"
-      :repository="p.repository"
-      :img="p.img"
-      :description="p.description"
-      :type="p.type"
-      :category="p.category"
-    />
+    <CardProject v-for="(p, index) in projects" :key="index" :title="p.title" :technologies="p.technologies"
+      :web="p.web" :repository="p.repository" :img="p.img" :description="p.description" :type="p.type"
+      :category="p.category" />
     <div class="portfolio__cta">
-      <a
-        href="https://github.com/Daviiduhh"
-        class="portfolio__cta__see btn--secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://github.com/Daviiduhh" class="portfolio__cta__see btn--secondary" target="_blank"
+        rel="noopener noreferrer">
         <fa class="portfolio__cta__see__icon" :icon="['fab', 'github']" />
         See more
       </a>
@@ -33,6 +20,8 @@
 </template>
 
 <script>
+import axios from "axios"
+
 import CardProject from "../components/CardProject.vue";
 import Title from "../components/Title.vue";
 
@@ -44,77 +33,21 @@ export default {
   },
   data() {
     return {
-      projects: [
-        {
-          title: "Aerolab Challenge",
-          img: "/projects_imgs/project2.png",
-          technologies: "Nuxt, JavaScript, CSS, HTML",
-          description:
-            "The challenge is to build a catalog view for a loyalty program app. Aerolab provide the base UI and API, I can use it as provided or I can make any improvements I deem fit. It’s up to my imagination and my skills to come up with new solutions and/or interactions between the components.",
-          repository:
-            "https://github.com/Daviiduhh/aerolab-challenge",
-          web: "https://aerolab.netlify.app/",
-          type: "Web app",
-          category: "E-commerce"
-        },
-        {
-          title: "Coin Market",
-          img: "/projects_imgs/project0.png",
-          technologies: "Vue, Bootstrap, CSS",
-          description:
-            "Coin Market lists the cryptocurrency market cap, it shows 20 cryptos with the logo, name, short-name, value and value change. The data are obtained from the GekoCoin API. The styles are made with bootstrap and CSS.",
-          repository: "https://github.com/Daviiduhh/mercado-de-monedas",
-          web: "https://mercadodemonedas.netlify.app/",
-          type: "Web app",
-          category: "Monitor"
-        },
-        {
-          title: "dogAPI",
-          img: "/projects_imgs/project1.png",
-          technologies: "Vue, Bootstrap, CSS",
-          description:
-            "This page shows you the most pretty dogs images served from the internet's biggest collection of open source dog pictures: dogAPI. The page also shows you how many dogs you have seen.",
-          repository: "https://github.com/Daviiduhh/dogapi-vue",
-          web: "https://perritos-vue.netlify.app/",
-          type: "Web app",
-          category: "Entertaiment"
-        },
-        {
-          title: "Hair Salon",
-          img: "/projects_imgs/project3.png",
-          technologies: "SASS, JavaScript, HTML",
-          description:
-            "Front end page to book a session on a hair salon. You can choose different services, a date and an hour. Then the page will show you a resume of your order.",
-          repository: "https://github.com/Daviiduhh/appBarberia",
-          web: "https://appbarberiadaviiduhh.netlify.app/",
-          type: "Web app",
-          category: "Productivity"
-        },
-        {
-          title: "Festival",
-          img: "/projects_imgs/project4.png",
-          technologies: "JavaScript, SASS, HTML",
-          description:
-            "This is a page about a Rock & EDM festival! You can see the details of the festival, the line up, a gallery with zoom clicking on the images, and the different tickets.",
-          repository: "https://github.com/Daviiduhh/rockEdmFestival",
-          web: "https://daviiduhhfestival.netlify.app/",
-          type: "Static",
-          category: "Informative"
-        },
-        {
-          title: "Blog el buen café",
-          img: "/projects_imgs/project5.png",
-          technologies: "CSS, HTML, JavaScript",
-          description:
-            "This page is a blog about coffee, where you can find articles, workshops, recipes and tips to make and enjoy a better coffee.",
-          repository: "https://github.com/Daviiduhh/blogElBuenCafe",
-          web: "https://blogelbuencafe.netlify.app/",
-          type: "Static",
-          category: "Blog"
-        },
-      ],
+      projects: [],
     };
   },
+  mounted() {
+    this.getProjects()
+  },
+  methods: {
+    getProjects() {
+      axios.get("/projects.json")
+        .then(response => {
+          this.projects = response.data.projects
+        })
+        .catch((e) => console.log(e));
+    }
+  }
 };
 </script>
 
@@ -142,6 +75,7 @@ export default {
 @media (min-width: 1024px) {
   .portfolio {
     grid-template-columns: repeat(2, 1fr);
+
     &__cta {
       grid-column: 1 / 3;
       display: flex;
