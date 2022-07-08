@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     getProjects() {
-      axios.get("/projects.json")
+      axios.get("https://projects.daviiduhh.com/projects.json")
         .then(response => {
           this.projects = response.data.projects
         })
