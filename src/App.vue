@@ -44,6 +44,7 @@ body {
 
 .container {
   margin: 0 10px 30px 10px;
+  max-width: 1300px;
 }
 .container--largo {
   padding-left: 10px;
@@ -61,16 +62,26 @@ body {
 }
 @media (min-width: 1024px) {
   .container {
-    margin: 0 150px 30px 150px;
+    margin: 0 80px 30px 80px;
   }
   .container--largo {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 }
 @media (min-width: 1365px) {
   .container {
     margin: 0 200px 30px 200px;
+  }
+  .container--largo {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    width: 80%;
+    margin: 0 auto 30px auto;
   }
   .container--largo {
     padding-left: 100px;
