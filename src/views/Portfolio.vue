@@ -59,6 +59,7 @@ export default {
 
   &__cta {
     margin-top: 10px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
