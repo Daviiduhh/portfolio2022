@@ -2,19 +2,19 @@
   <div class="card-project">
     <div class="card-project__header">
       <div class="card-project__header__info">
-        <h2 class="card-project__header__info__title" v-text="title"></h2>
+        <h2 class="card-project__header__info__name" v-text="name"></h2>
         <p
           class="card-project__header__info__technologies"
-          v-text="technologies"
+          v-text="technologies.join(', ')"
         ></p>
       </div>
       <div class="card-project__header__links">
         <a
           class="card-project__header__links__link"
-          :href="web"
+          :href="website"
           target="_blank"
           rel="noopener noreferrer"
-          title="View website"
+          name="View websitesite"
         >
           <fa
             class="card-project__header__links__link__icon"
@@ -26,7 +26,7 @@
           :href="repository"
           target="_blank"
           rel="noopener noreferrer"
-          title="View repository"
+          name="View repository"
         >
           <fa
             class="card-project__header__links__link__icon"
@@ -36,12 +36,12 @@
       </div>
     </div>
     <a
-      class="card-project__img"
-      :href="web"
+      class="card-project__image"
+      :href="website"
       target="_blank"
       rel="noopener noreferrer"
-      :style="'background: url(' + img + ');'"
-      title="View website"
+      :style="'background: url(' + image + ');'"
+      name="View websitesite"
     >
     </a>
     <div class="card-project__desc">
@@ -49,11 +49,11 @@
     </div>
     <div class="card-project__details">
       <div class="card-project__details__group">
-        <h3 class="card-project__details__group__title">Type</h3>
+        <h3 class="card-project__details__group__name">Type</h3>
         <p class="card-project__details__group__text" v-text="type"></p>
       </div>
       <div class="card-project__details__group">
-        <h3 class="card-project__details__group__title">Category</h3>
+        <h3 class="card-project__details__group__name">Category</h3>
         <p class="card-project__details__group__text" v-text="category"></p>
       </div>
     </div>
@@ -63,20 +63,19 @@
 <script>
 export default {
   props: {
-    title: String,
-    img: String,
-    technologies: String,
+    name: String,
+    image: String,
+    technologies: Array,
     repository: String,
-    web: String,
+    website: String,
     description: String,
     type: String,
-    category: String
+    category: String,
   },
   data() {
     return {};
   },
-  methods: {
-  },
+  methods: {},
 };
 </script>
 
@@ -92,9 +91,9 @@ export default {
   gap: 25px;
 
   //Shadow
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
--webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
--moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  -websitekit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
 
   &__header {
     width: 90%;
@@ -105,7 +104,7 @@ export default {
     &__info {
       text-align: left;
 
-      &__title {
+      &__name {
         margin: 0;
       }
 
@@ -142,7 +141,7 @@ export default {
     }
   }
 
-  &__img {
+  &__image {
     width: 90%;
     aspect-ratio: 16 / 9;
     border-radius: 5px;
@@ -180,12 +179,12 @@ export default {
       align-items: flex-start;
       gap: 10px;
 
-      &__title,
+      &__name,
       &__text {
         margin: 0;
       }
 
-      &__title {
+      &__name {
         font-weight: 500;
       }
 
@@ -200,7 +199,7 @@ export default {
   .card-project {
     &__header {
       &__info {
-        &__title {
+        &__name {
           font-size: 26px;
         }
         &__technologies {
