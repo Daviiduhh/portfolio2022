@@ -1,12 +1,9 @@
 <template>
   <div class="home container">
     <div class="home__about">
-      <h1 class="home__about__title">Hi, I'm David Madrid</h1>
-      <h2 class="home__about__subtitle">Front end web developer</h2>
-      <h4 class="home__about__desc">
-        I have experience crafting solid and scalable front end products with
-        great user experience.
-      </h4>
+      <h1 class="home__about__title" v-text="pageContent.title"></h1>
+      <h2 class="home__about__subtitle" v-text="pageContent.subtitle"></h2>
+      <h4 class="home__about__desc" v-text="pageContent.description"></h4>
       <div class="home__about__btns">
         <router-link
           class="home__btns__btn btn"
@@ -16,10 +13,11 @@
           Portfolio
         </router-link>
         <a
-          href="/DavidMadrid_Frontend_CV.pdf"
+          :href="pageContent.buttonLink"
           download="DavidMadrid_Frontend_CV"
           class="home__btns__btn--secondary btn--secondary"
           title="Download CV"
+          target="_blank"
         >
           Download CV
         </a>
@@ -28,13 +26,29 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-    };
-  },
+<script setup>
+import { createClient } from "@supabase/supabase-js";
+import { ref, onMounted } from "vue";
+
+const supabaseUrl = "https://prxtxtkhwnyfszvjugew.supabase.co",
+  supabaseKey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByeHR4dGtod255ZnN6dmp1Z2V3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5NjE4NDQsImV4cCI6MjAyNTUzNzg0NH0.9lXmeZZSAjtH4Z9Y5IMy2pi6vBFD6Kw9MX5Aej5bFHI",
+  supabase = createClient(supabaseUrl, supabaseKey);
+
+const pageContent = ref({});
+
+const getCvUrl = async () => {
+  const { data: titles, error } = await supabase
+    .from("titles")
+    .select()
+    .eq("id", "home");
+
+  pageContent.value = titles.at(0);
 };
+
+onMounted(() => {
+  getCvUrl();
+});
 </script>
 
 <style lang="scss">

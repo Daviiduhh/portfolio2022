@@ -50,10 +50,10 @@ import Title from "../components/Title.vue";
 
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "https://prxtxtkhwnyfszvjugew.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByeHR4dGtod255ZnN6dmp1Z2V3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5NjE4NDQsImV4cCI6MjAyNTUzNzg0NH0.9lXmeZZSAjtH4Z9Y5IMy2pi6vBFD6Kw9MX5Aej5bFHI";
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseUrl = "https://prxtxtkhwnyfszvjugew.supabase.co",
+  supabaseKey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByeHR4dGtod255ZnN6dmp1Z2V3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5NjE4NDQsImV4cCI6MjAyNTUzNzg0NH0.9lXmeZZSAjtH4Z9Y5IMy2pi6vBFD6Kw9MX5Aej5bFHI",
+  supabase = createClient(supabaseUrl, supabaseKey);
 
 export default {
   name: "Home",
