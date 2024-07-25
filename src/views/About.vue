@@ -1,24 +1,8 @@
 <template>
   <div class="about container">
-    <Title title="About" subtitle="A little about me" />
+    <Title :title="pageContent.title" :subtitle="pageContent.subtitle" />
     <div class="about__me">
-      <p class="about__me__text">
-        Hi, I'm David Madrid Nápoles, front end web developer, with experience
-        developing front end solutions like SPA and PWA, with technologies like
-        VueJs, JavaScript, CSS, SASS, and HTML. I have learned to do this on my
-        own, with courses, references, guides and documentation. The university
-        helped me a little bit with oop.
-      </p>
-      <p class="about__me__text">
-        I decided to study web development because is the easiest way to reach
-        the people, you just need a web browser to explore the entire web. The
-        web industry is growing so fast, and with the arrived of the PWA, web3
-        and the most powerful JavaScript frameworks the possibilities are going
-        to be bigger and bigger .
-      </p>
-      <p class="about__me__text">
-        I spend my free time taking pictures, reading, playing the drums and
-        developing new things to explore technologies I'm interested in.
+      <p class="about__me__text" v-html="pageContent.content">
       </p>
     </div>
     <div class="about__skills">
@@ -67,14 +51,33 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Title from "../components/Title.vue";
 
-export default {
-  components: {
-    Title,
-  },
-};
+import { createClient } from "@supabase/supabase-js";
+import { ref, onMounted } from "vue";
+
+const supabaseUrl = "https://prxtxtkhwnyfszvjugew.supabase.co",
+  supabaseKey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByeHR4dGtod255ZnN6dmp1Z2V3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5NjE4NDQsImV4cCI6MjAyNTUzNzg0NH0.9lXmeZZSAjtH4Z9Y5IMy2pi6vBFD6Kw9MX5Aej5bFHI",
+  supabase = createClient(supabaseUrl, supabaseKey);
+
+const pageContent = ref({});
+
+const getPageContent = async () => {
+  const { data: pages, error } = await supabase
+    .from("pages")
+    .select()
+    .eq("id", "about");
+
+  pageContent.value = pages.at(0);
+
+  pageContent.value.content = pageContent.value.content.replaceAll("\r\n\r\n", "<br><br>")
+}
+
+onMounted(() => {
+  getPageContent()
+});
 </script>
 
 <style lang="scss">
@@ -130,46 +133,55 @@ export default {
     color: #3fb984;
   }
 }
+
 .js {
   &:hover {
     color: #fcdc00;
   }
 }
+
 .git {
   &:hover {
     color: #f1481c;
   }
 }
+
 .html {
   &:hover {
     color: #e34c26;
   }
 }
+
 .css {
   &:hover {
     color: #00ace4;
   }
 }
+
 .bootstrap {
   &:hover {
     color: #7111f5;
   }
 }
+
 .npm {
   &:hover {
     color: #cc3534;
   }
 }
+
 .sass {
   &:hover {
     color: #c56394;
   }
 }
+
 .gulp {
   &:hover {
     color: #eb4a4b;
   }
 }
+
 .terminal {
   &:hover {
     color: #04aa6d;

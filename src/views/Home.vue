@@ -3,7 +3,7 @@
     <div class="home__about">
       <h1 class="home__about__title" v-text="pageContent.title"></h1>
       <h2 class="home__about__subtitle" v-text="pageContent.subtitle"></h2>
-      <h4 class="home__about__desc" v-text="pageContent.description"></h4>
+      <h4 class="home__about__desc" v-text="pageContent.content"></h4>
       <div class="home__about__btns">
         <router-link
           class="home__btns__btn btn"
@@ -38,12 +38,12 @@ const supabaseUrl = "https://prxtxtkhwnyfszvjugew.supabase.co",
 const pageContent = ref({});
 
 const getCvUrl = async () => {
-  const { data: titles, error } = await supabase
-    .from("titles")
+  const { data: pages, error } = await supabase
+    .from("pages")
     .select()
     .eq("id", "home");
 
-  pageContent.value = titles.at(0);
+  pageContent.value = pages.at(0);
 };
 
 onMounted(() => {
