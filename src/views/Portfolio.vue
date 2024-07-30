@@ -1,37 +1,23 @@
 <template>
   <div class="container">
-    <Title title="Portfolio" subtitle="Here you can see my projects" />
+    <Title :title="pageContent.title" :subtitle="pageContent.subtitle" />
   </div>
   <div class="portfolio container">
-    <CardProject
-      v-for="{
-        id,
-        name,
-        technologies,
-        website,
-        repository,
-        image,
-        description,
-        type,
-        category,
-      } in projects"
-      :key="id"
-      :name="name"
-      :technologies="technologies"
-      :website="website"
-      :repository="repository"
-      :image="image"
-      :description="description"
-      :type="type"
-      :category="category"
-    />
+    <CardProject v-for="{
+      id,
+      name,
+      technologies,
+      website,
+      repository,
+      image,
+      description,
+      type,
+      category,
+    } in projects" :key="id" :name="name" :technologies="technologies" :website="website" :repository="repository"
+      :image="image" :description="description" :type="type" :category="category" />
     <div class="portfolio__cta">
-      <a
-        href="https://github.com/Daviiduhh"
-        class="portfolio__cta__see btn--secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://github.com/Daviiduhh" class="portfolio__cta__see btn--secondary" target="_blank"
+        rel="noopener noreferrer">
         <fa class="portfolio__cta__see__icon" :icon="['fab', 'github']" />
         See more
       </a>
@@ -42,43 +28,41 @@
   </div>
 </template>
 
-<script>
-import axios from "axios";
-
+<script setup>
 import CardProject from "../components/CardProject.vue";
 import Title from "../components/Title.vue";
 
 import { createClient } from "@supabase/supabase-js";
+import { ref, onMounted } from "vue";
 
 const supabaseUrl = "https://prxtxtkhwnyfszvjugew.supabase.co",
   supabaseKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByeHR4dGtod255ZnN6dmp1Z2V3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5NjE4NDQsImV4cCI6MjAyNTUzNzg0NH0.9lXmeZZSAjtH4Z9Y5IMy2pi6vBFD6Kw9MX5Aej5bFHI",
   supabase = createClient(supabaseUrl, supabaseKey);
 
-export default {
-  name: "Home",
-  components: {
-    CardProject,
-    Title,
-  },
-  data() {
-    return {
-      projects: [],
-    };
-  },
-  mounted() {
-    this.getProjects();
-  },
-  methods: {
-    async getProjects() {
-      const { data: projects, error } = await supabase
-        .from("projects")
-        .select();
+const projects = ref([]),
+  pageContent = ref({});
 
-      this.projects = projects;
-    },
-  },
-};
+const getProjects = async () => {
+  const { data, error } = await supabase
+    .from("projects")
+    .select();
+
+  projects.value = data;
+}
+const getPageContent = async () => {
+  const { data: pages, error } = await supabase
+    .from("pages")
+    .select()
+    .eq("id", "portfolio");
+
+  pageContent.value = pages.at(0);
+}
+
+onMounted(() => {
+  getProjects();
+  getPageContent()
+});
 </script>
 
 <style lang="scss">
