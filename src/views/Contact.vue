@@ -3,62 +3,26 @@
     <Title title="Contact" subtitle="I'd love to work with you" />
   </div>
   <div class="contact container">
-    <a
-      class="contact__link"
-      href="https://www.linkedin.com/in/daviiduhh/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <fa class="contact__link__icon" :icon="['fab', 'linkedin']" />
-      <h4 class="contact__link__name">LinkedIn</h4>
-    </a>
-    <a
-      class="contact__link"
-      href="mailto: daviiduhhs@gmail.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <fa class="contact__link__icon" icon="envelope" />
-      <h4 class="contact__link__name">Email</h4>
-    </a>
-    <a
-      class="contact__link"
-      href="https://github.com/Daviiduhh"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <fa class="contact__link__icon" :icon="['fab', 'github']" />
-      <h4 class="contact__link__name">Github</h4>
-    </a>
-    <a
-      class="contact__link"
-      href="https://gitlab.com/Daviiduhh"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <fa class="contact__link__icon" :icon="['fab', 'gitlab']" />
-      <h4 class="contact__link__name">Gitlab</h4>
-    </a>
-    <a
-      class="contact__link"
-      href="https://twitter.com/Daviiduhh"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <fa class="contact__link__icon" :icon="['fab', 'twitter']" />
-      <h4 class="contact__link__name">Twitter</h4>
+    <a v-for="link in linksStore.activeLinks" class="contact__link" :href="link.link" target="_blank" rel="noopener noreferrer" :key="link.id">
+      <fa class="contact__link__icon" :icon="link.icon.split('-')" />
+      <h4 v-text="link.name" class="contact__link__name"></h4>
     </a>
   </div>
 </template>
 
-<script>
-import Title from "../components/Title.vue";
+<script setup>
+import { ref, onMounted } from "vue";
 
-export default {
-  components: {
-    Title,
-  },
-};
+import Title from "../components/Title.vue";
+import { useLinksStore } from '../stores/links'
+
+const linksStore = useLinksStore()
+
+onMounted(() => {
+  linksStore.fetch()
+});
+
+console.log(linksStore.links)
 </script>
 
 <style lang="scss">
