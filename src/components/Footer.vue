@@ -20,24 +20,25 @@
       </router-link>
     </div>
     <div class="footer__social">
-      <a class="footer__social__link" href="https://www.linkedin.com/in/daviiduhh/"  target="_blank" rel="noopener noreferrer">
-        <fa class="footer__social__link__icon" :icon="['fab', 'linkedin']" />
-      </a>
-      <a class="footer__social__link" href="mailto: daviiduhhs@gmail.com" target="_blank" rel="noopener noreferrer">
-        <fa class="footer__social__link__icon" icon="envelope" />
-      </a>
-      <a class="footer__social__link" href="https://github.com/Daviiduhh" target="_blank" rel="noopener noreferrer">
-        <fa class="footer__social__link__icon" :icon="['fab', 'github']" />
-      </a>
-      <a class="footer__social__link" href="https://gitlab.com/Daviiduhh" target="_blank" rel="noopener noreferrer">
-        <fa class="footer__social__link__icon" :icon="['fab', 'gitlab']" />
-      </a>
-      <a class="footer__social__link" href="https://twitter.com/Daviiduhh" target="_blank" rel="noopener noreferrer">
-        <fa class="footer__social__link__icon" :icon="['fab', 'twitter']" />
+      <a v-for="{ id, name, link, icon } in linksStore.activeLinks" :key="id" class="footer__social__link" :href="link"
+        target="_blank" rel="noopener noreferrer">
+        <fa class="footer__social__link__icon" :icon="icon.split('-')" />
       </a>
     </div>
   </footer>
 </template>
+
+<script setup>
+import { onMounted } from "vue";
+
+import { useLinksStore } from '../stores/links'
+
+const linksStore = useLinksStore()
+
+onMounted(() => {
+  linksStore.fetch()
+});
+</script>
 
 <style lang="scss">
 .footer {
@@ -77,13 +78,14 @@
         content: "<";
         color: #04aa6d;
       }
+
       &::after {
         content: "/>";
         color: #04aa6d;
       }
     }
 
-    &__subtitle, 
+    &__subtitle,
     &__made {
       margin: 0;
     }
@@ -109,6 +111,7 @@
       }
     }
   }
+
   &__social {
     width: 90%;
     display: grid;
@@ -142,12 +145,13 @@
     &__daviiduhh {
       width: auto;
     }
+
     &__nav {
       width: auto;
     }
+
     &__social {
       width: auto;
     }
   }
-}
-</style>
+}</style>

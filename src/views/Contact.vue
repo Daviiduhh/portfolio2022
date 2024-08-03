@@ -3,7 +3,8 @@
     <Title title="Contact" subtitle="I'd love to work with you" />
   </div>
   <div class="contact container">
-    <a v-for="link in linksStore.activeLinks" class="contact__link" :href="link.link" target="_blank" rel="noopener noreferrer" :key="link.id">
+    <a v-for="link in linksStore.activeLinks" class="contact__link" :href="link.link" target="_blank"
+      rel="noopener noreferrer" :key="link.id">
       <fa class="contact__link__icon" :icon="link.icon.split('-')" />
       <h4 v-text="link.name" class="contact__link__name"></h4>
     </a>
@@ -11,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 
 import Title from "../components/Title.vue";
 import { useLinksStore } from '../stores/links'
@@ -21,8 +22,6 @@ const linksStore = useLinksStore()
 onMounted(() => {
   linksStore.fetch()
 });
-
-console.log(linksStore.links)
 </script>
 
 <style lang="scss">
