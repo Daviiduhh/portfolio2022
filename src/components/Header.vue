@@ -48,62 +48,28 @@
       <router-link to="/contact" class="menu__nav__link link" @click="showMenu">
         Contact
       </router-link>
-      <a
-        href="https://www.linkedin.com/in/daviiduhh/"
-        class="menu__nav__social link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >LinkedIn</a
-      >
-      <a
-        href="mailto: daviiduhhs@gmail.com"
-        class="menu__nav__social link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Email</a
-      >
-      <a
-        href="https://github.com/Daviiduhh"
-        class="menu__nav__social link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Github</a
-      >
-      <a
-        href="https://gitlab.com/Daviiduhh"
-        class="menu__nav__social link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Gitlab</a
-      >
-      <a
-        href="https://twitter.com/Daviiduhh"
-        class="menu__nav__social link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Twitter</a
-      >
+      <a v-for="link in linksStore.activeLinks" :key="link.id" :href="link.link" class="menu__nav__social link"
+        target="_blank" rel="noopener noreferrer" v-text="link.name"></a>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      menu: false,
-    };
-  },
-  methods: {
-    showMenu: function () {
-      if (this.menu === true) {
-        this.menu = false;
-      } else if (this.menu === false) {
-        this.menu = true;
-      }
-    },
-  },
-};
+<script setup>
+import { ref, onMounted } from "vue";
+
+import { useLinksStore } from '../stores/links'
+
+const linksStore = useLinksStore()
+
+const menu = ref(false)
+
+const showMenu = () => {
+  menu.value = !menu.value
+}
+
+onMounted(() => {
+  linksStore.fetch()
+});
 </script>
 
 <style lang="scss">
@@ -130,6 +96,7 @@ export default {
         content: "<";
         color: #04aa6d;
       }
+
       &::after {
         content: "/>";
         color: #04aa6d;

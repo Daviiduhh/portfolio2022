@@ -4,18 +4,21 @@
   <Footer></Footer>
 </template>
 
-<script>
+<script setup>
+import { onMounted } from "vue";
+
+import { useSupabaseStore } from './stores/supabase'
+
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 
-export default {
-  name: "App",
-  components: {
-    Header,
-    Footer,
-    //ElButton
-  },
-};
+const supabaseStore = useSupabaseStore()
+
+onMounted(() => {
+  supabaseStore.startSupabaseClient()
+});
+
+supabaseStore.startSupabaseClient()
 </script>
 
 <style lang="scss">

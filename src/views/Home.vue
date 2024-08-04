@@ -5,20 +5,11 @@
       <h2 class="home__about__subtitle" v-text="pageContent.subtitle"></h2>
       <h4 class="home__about__desc" v-text="pageContent.content"></h4>
       <div class="home__about__btns">
-        <router-link
-          class="home__btns__btn btn"
-          to="/portfolio"
-          title="Go to portfolio"
-        >
+        <router-link class="home__btns__btn btn" to="/portfolio" title="Go to portfolio">
           Portfolio
         </router-link>
-        <a
-          :href="pageContent.buttonLink"
-          download="DavidMadrid_Frontend_CV"
-          class="home__btns__btn--secondary btn--secondary"
-          title="Download CV"
-          target="_blank"
-        >
+        <a :href="pageContent.buttonLink" download="DavidMadrid_Frontend_CV"
+          class="home__btns__btn--secondary btn--secondary" title="Download CV" target="_blank">
           Download CV
         </a>
       </div>
@@ -27,18 +18,16 @@
 </template>
 
 <script setup>
-import { createClient } from "@supabase/supabase-js";
 import { ref, onMounted } from "vue";
 
-const supabaseUrl = "https://prxtxtkhwnyfszvjugew.supabase.co",
-  supabaseKey =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByeHR4dGtod255ZnN6dmp1Z2V3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5NjE4NDQsImV4cCI6MjAyNTUzNzg0NH0.9lXmeZZSAjtH4Z9Y5IMy2pi6vBFD6Kw9MX5Aej5bFHI",
-  supabase = createClient(supabaseUrl, supabaseKey);
+import { useSupabaseStore } from "../stores/supabase";
+
+const supabaseStore = useSupabaseStore();
 
 const pageContent = ref({});
 
 const getCvUrl = async () => {
-  const { data: pages, error } = await supabase
+  const { data: pages, error } = await supabaseStore.supabase
     .from("pages")
     .select()
     .eq("id", "home");
@@ -112,6 +101,7 @@ onMounted(() => {
     font-size: 35px;
   }
 }
+
 @media (min-width: 768px) {
   .home__about {
     &__title {
@@ -124,12 +114,14 @@ onMounted(() => {
     }
   }
 }
+
 @media (min-width: 900px) {
   .home__about__btns {
     width: 50%;
     flex-direction: row;
   }
 }
+
 @media (min-width: 1200px) {
   .home__about__btns {
     width: 40%;
