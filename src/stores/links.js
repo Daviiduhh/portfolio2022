@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { createClient } from "@supabase/supabase-js";
 
 import { useSupabaseStore } from "./supabase";
 
