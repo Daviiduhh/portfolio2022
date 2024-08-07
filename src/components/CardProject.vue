@@ -16,7 +16,7 @@
           rel="noopener noreferrer"
           name="View websitesite"
         >
-          <fa
+          <font-awesome-icon
             class="card-project__header__links__link__icon"
             icon="globe-americas"
           />
@@ -28,7 +28,7 @@
           rel="noopener noreferrer"
           name="View repository"
         >
-          <fa
+          <font-awesome-icon
             class="card-project__header__links__link__icon"
             :icon="['fab', 'github']"
           />

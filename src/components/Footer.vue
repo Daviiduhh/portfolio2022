@@ -22,7 +22,7 @@
     <div class="footer__social">
       <a v-for="{ id, name, link, icon } in linksStore.activeLinks" :key="id" class="footer__social__link" :href="link"
         target="_blank" rel="noopener noreferrer">
-        <fa class="footer__social__link__icon" :icon="icon.split('-')" />
+        <font-awesome-icon class="footer__social__link__icon" :icon="icon.split('-')" />
       </a>
     </div>
   </footer>

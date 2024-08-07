@@ -18,7 +18,7 @@
     <div class="portfolio__cta">
       <a href="https://github.com/Daviiduhh" class="portfolio__cta__see btn--secondary" target="_blank"
         rel="noopener noreferrer">
-        <fa class="portfolio__cta__see__icon" :icon="['fab', 'github']" />
+        <font-awesome-icon class="portfolio__cta__see__icon" :icon="['fab', 'github']" />
         See more
       </a>
       <router-link class="portfolio__cta__contact btn" to="/contact">

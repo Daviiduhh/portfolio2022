@@ -23,7 +23,7 @@
 
       <!-- Burger menu btn -->
       <button class="header__nav__btn" @click="showMenu">
-        <fa class="header__nav__btn__icon" icon="bars" v-show="!menu" />
+        <font-awesome-icon class="header__nav__btn__icon" icon="bars" v-show="!menu" />
       </button>
       <!-- Burger menu btn fin -->
     </div>
@@ -32,7 +32,7 @@
   <div class="menu" v-show="menu">
     <header class="menu__header container--largo">
       <button class="menu__header__x link" @click="showMenu">
-        <fa class="menu__header__x__icon" icon="x" />
+        <font-awesome-icon class="menu__header__x__icon" icon="x" />
       </button>
     </header>
     <div class="menu__nav container--largo">

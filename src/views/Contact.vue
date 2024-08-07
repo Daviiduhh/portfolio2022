@@ -5,7 +5,7 @@
   <div class="contact container">
     <a v-for="link in linksStore.activeLinks" class="contact__link" :href="link.link" target="_blank"
       rel="noopener noreferrer" :key="link.id">
-      <fa class="contact__link__icon" :icon="link.icon.split('-')" />
+      <font-awesome-icon class="contact__link__icon" :icon="link.icon.split('-')" />
       <h4 v-text="link.name" class="contact__link__name"></h4>
     </a>
   </div>

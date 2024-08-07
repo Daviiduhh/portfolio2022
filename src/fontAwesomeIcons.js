@@ -8,6 +8,7 @@ import {
   faX,
   faEnvelope,
   faTerminal,
+  faTable,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -34,6 +35,7 @@ library.add(
   faBars,
   faX,
   faEnvelope,
+  faTable,
   faHtml5,
   faCss3,
   faJs,
