@@ -49,6 +49,7 @@ body {
   margin: 0 10px 30px 10px;
   max-width: 1300px;
 }
+
 .container--largo {
   padding-left: 10px;
   padding-right: 10px;
@@ -58,41 +59,59 @@ body {
   .container {
     margin: 0 60px 30px 60px;
   }
+
   .container--largo {
     padding-left: 40px;
     padding-right: 40px;
   }
 }
+
 @media (min-width: 1024px) {
   .container {
     margin: 0 80px 30px 80px;
   }
+
   .container--largo {
     padding-left: 60px;
     padding-right: 60px;
   }
 }
+
 @media (min-width: 1365px) {
   .container {
     margin: 0 200px 30px 200px;
   }
-  .container--largo {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-}
-@media (min-width: 1920px) {
-  .container {
-    width: 80%;
-    margin: 0 auto 30px auto;
-  }
+
   .container--largo {
     padding-left: 100px;
     padding-right: 100px;
   }
 }
 
-.btn, 
+@media (min-width: 1920px) {
+  .container {
+    width: 80%;
+    margin: 0 auto 30px auto;
+  }
+
+  .container--largo {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+a {
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: #04aa6d;
+}
+
+.btn,
 .btn--secondary {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
@@ -115,7 +134,7 @@ body {
   background-color: #04aa6d;
   color: #ffffff;
   border: 2px solid #04aa6d;
-  
+
   transition: background-color 0.5s, border 0.5s;
 
   &:hover {
@@ -144,5 +163,4 @@ body {
   &:hover {
     color: #04aa6d;
   }
-}
-</style>
+}</style>

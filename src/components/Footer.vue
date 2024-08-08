@@ -5,7 +5,7 @@
         daviiduhh
       </router-link>
       <h4 class="footer__daviiduhh__subtitle">Front end web developer</h4>
-      <p class="footer__daviiduhh__made">Made with <strong>VueJs</strong></p>
+      <p class="footer__daviiduhh__made">Made with <a href="https://vuejs.org/">VueJs</a> and <a href="https://supabase.com/">Supabase</a></p>
     </div>
     <div class="footer__nav">
       <router-link to="/" class="footer__nav__link"> Home </router-link>

@@ -3,10 +3,10 @@
         <Title :title="pageContent.title" :subtitle="pageContent.subtitle" />
     </div>
     <div class="container tables">
-        <TableListItem v-for="{ id, name, selector } in tables" :key="id" :selector="selector" :name="name"
-            @click="loadTable(selector)" />
+        <TableListItem v-for="{ id, name, selector, active } in tables" :key="id" :selector="selector" :name="name"
+            :active="active" @click="loadTable(selector)" />
     </div>
-    <div class="container">
+    <div class="container" v-show="tables.some(table => table.active)">
         <v-data-table :headers="headers" :items="tableData" item-key="id" :loading="loading"
             class="elevation-15"></v-data-table>
     </div>
@@ -53,12 +53,26 @@ const getTables = async () => {
         .from("tables")
         .select();
 
-    tables.value = data;
+    tables.value = data.map(table => {
+        return {
+            ...table,
+            active: false
+        }
+    });
 }
 
-const loadTable = async (table) => {
-    getTableData(table)
-    getTableFields(table)
+const loadTable = async (selector) => {
+    getTableData(selector)
+    getTableFields(selector)
+
+    const found = tables.value.findIndex((table) => table.selector === selector),
+        lastActive = tables.value.findIndex((table) => table.active)
+
+    if (lastActive !== -1)
+        tables.value[lastActive]["active"] = false
+
+    if (found !== -1)
+        tables.value[found]["active"] = true
 
     loading.value = true
 }

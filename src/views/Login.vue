@@ -54,6 +54,9 @@ onMounted(() => {
   
 <style lang="scss">
 .login {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
     &__form {
         display: flex;
         flex-direction: column;
@@ -65,6 +68,18 @@ onMounted(() => {
             align-items: start;
             justify-content: center;
             gap: 0.5rem;
+        }
+
+        &__input {
+            padding: 1rem 0.5rem;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 1px solid #211d1c;
+            width: 100%;
+            
+            &:focus-visible {
+                outline: 2px solid #04aa6d;
+            }
         }
     }
 }

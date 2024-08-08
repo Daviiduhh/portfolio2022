@@ -1,5 +1,5 @@
 <template>
-    <div class="table-item">
+    <div class="table-item" :class="active ? 'table-item--active' : ''">
         <font-awesome-icon :icon="['fas', 'table']" />
         <h4 class="table-item__name" v-text="name"></h4>
     </div>
@@ -9,7 +9,8 @@
 export default {
     props: {
         name: String,
-        selector: String
+        selector: String,
+        active: Boolean
     },
     data() {
         return {
@@ -40,5 +41,9 @@ export default {
         margin: 0;
         font-weight: 300;
     }
+}
+
+.table-item--active {
+    color: #04aa6dd2 !important;
 }
 </style>
