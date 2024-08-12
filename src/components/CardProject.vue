@@ -3,46 +3,25 @@
     <div class="card-project__header">
       <div class="card-project__header__info">
         <h2 class="card-project__header__info__name" v-text="name"></h2>
-        <p
-          class="card-project__header__info__technologies"
-          v-text="technologies.join(', ')"
-        ></p>
+        <div class="card-project__header__info__technologies">
+          <v-chip v-for="tech in technologies" color="#04aa6d" density="compact">
+            {{ tech }}
+          </v-chip>
+        </div>
       </div>
       <div class="card-project__header__links">
-        <a
-          class="card-project__header__links__link"
-          :href="website"
-          target="_blank"
-          rel="noopener noreferrer"
-          name="View websitesite"
-        >
-          <font-awesome-icon
-            class="card-project__header__links__link__icon"
-            icon="globe-americas"
-          />
+        <a class="card-project__header__links__link" :href="website" target="_blank" rel="noopener noreferrer"
+          name="View websitesite">
+          <font-awesome-icon class="card-project__header__links__link__icon" icon="globe-americas" />
         </a>
-        <a
-          class="card-project__header__links__link"
-          :href="repository"
-          target="_blank"
-          rel="noopener noreferrer"
-          name="View repository"
-        >
-          <font-awesome-icon
-            class="card-project__header__links__link__icon"
-            :icon="['fab', 'github']"
-          />
+        <a class="card-project__header__links__link" :href="repository" target="_blank" rel="noopener noreferrer"
+          name="View repository">
+          <font-awesome-icon class="card-project__header__links__link__icon" :icon="['fab', 'github']" />
         </a>
       </div>
     </div>
-    <a
-      class="card-project__image"
-      :href="website"
-      target="_blank"
-      rel="noopener noreferrer"
-      :style="'background: url(' + image + ');'"
-      name="View websitesite"
-    >
+    <a class="card-project__image" :href="website" target="_blank" rel="noopener noreferrer"
+      :style="'background: url(' + image + ');'" name="View websitesite">
     </a>
     <div class="card-project__desc">
       <p class="card-project__desc__text" v-text="description"></p>
@@ -106,13 +85,12 @@ export default {
 
       &__name {
         margin: 0;
+        font-size: 2.5rem;
       }
 
       &__technologies {
-        margin: 0;
-        margin-top: 1px;
-        font-size: 16px;
-        font-weight: 300;
+        display: flex;
+        column-gap: 0.5rem;
       }
     }
 
@@ -158,7 +136,7 @@ export default {
 
     &__text {
       font-weight: 300;
-      font-size: 16px;
+      font-size: 1.6rem;
       text-align: left;
       margin: 0;
     }
@@ -177,7 +155,7 @@ export default {
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 10px;
+      gap: 5px;
 
       &__name,
       &__text {
@@ -185,11 +163,14 @@ export default {
       }
 
       &__name {
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 1.3rem;
       }
 
       &__text {
         font-weight: 300;
+        font-size: 1.2rem;
+        color: #646464;
       }
     }
   }
@@ -200,10 +181,7 @@ export default {
     &__header {
       &__info {
         &__name {
-          font-size: 26px;
-        }
-        &__technologies {
-          font-size: 20px;
+          font-size: 2.7rem;
         }
       }
 
@@ -218,9 +196,22 @@ export default {
 
     &__desc {
       &__text {
-        font-size: 18px;
+        font-size: 1.8rem;
       }
     }
+
+    &__details {
+    &__group {
+
+      &__name {
+        font-size: 1.5rem;
+      }
+
+      &__text {
+        font-size: 1.4rem;
+      }
+    }
+  }
   }
 }
 </style>
