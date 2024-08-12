@@ -4,7 +4,7 @@
       <div class="card-project__header__info">
         <h2 class="card-project__header__info__name" v-text="name"></h2>
         <div class="card-project__header__info__technologies">
-          <v-chip v-for="tech in technologies" color="#04aa6d" density="compact">
+          <v-chip v-for="tech in technologies" color="#04aa6d" size="large" density="compact">
             {{ tech }}
           </v-chip>
         </div>

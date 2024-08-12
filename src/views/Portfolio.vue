@@ -44,7 +44,8 @@ const supabaseStore = useSupabaseStore();
 const getProjects = async () => {
   const { data, error } = await supabaseStore.supabase
     .from("projects")
-    .select();
+    .select()
+    .eq("active", true);
 
   projects.value = data;
 }
