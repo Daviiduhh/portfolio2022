@@ -45,7 +45,8 @@ const getProjects = async () => {
   const { data, error } = await supabaseStore.supabase
     .from("projects")
     .select()
-    .eq("active", true);
+    .eq("active", true)
+    .order('index', { ascending: true });
 
   projects.value = data;
 }
