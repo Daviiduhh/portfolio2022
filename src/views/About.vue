@@ -1,6 +1,8 @@
 <template>
-  <div class="about container">
+  <div class="container">
     <Title :title="pageContent.title" :subtitle="pageContent.subtitle" />
+  </div>
+  <div class="about container">
     <div class="about__me">
       <p class="about__me__text" v-html="pageContent.content">
       </p>
@@ -80,20 +82,18 @@ onMounted(() => {
 
 <style lang="scss">
 .about {
-  display: grid;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
+  row-gap: 4rem;
 
   &__me {
-    width: 90%;
 
     &__text {
+      max-width: 60ch;
       margin-top: 0;
       margin-bottom: 20px;
       text-align: left;
-      font-size: 1.3em;
+      font-size: 1.6rem;
     }
   }
 
@@ -123,6 +123,14 @@ onMounted(() => {
         font-size: 5rem;
       }
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .about {
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 1rem;
   }
 }
 
